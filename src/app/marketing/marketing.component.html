@@ -1,0 +1,20 @@
+<div class="tabs">
+    <ul>
+      <li [ngClass]="{'is-active': ordered==true}" ><a (click)="isSelectedPage('ordered')">Price Ordered Plates</a></li>
+      <li [ngClass]="{'is-active': filtered==true}" ><a (click)="isSelectedPage('filtered')">Filtered Plates</a></li>
+      <li [ngClass]="{'is-active': promotions==true}" ><a (click)="isSelectedPage('promotions')">Promotions Plates</a></li>
+    </ul>
+  </div>
+
+  <div class="block">
+
+    @if(ordered==true) {
+       <app-ordered-plates></app-ordered-plates>
+    } 
+    @if(filtered==true){
+        <app-filtered-plates></app-filtered-plates>
+    }
+    @if(promotions==true){
+      <app-promotions></app-promotions>
+    }
+  </div>
